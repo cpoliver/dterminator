@@ -5,7 +5,8 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
-    "lint": "node_modules/.bin/eslint -c .eslintrc ."
+		"lint": "node_modules/.bin/eslint -c .eslintrc .",
+    "precommit": "lint-staged"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.6",
@@ -21,10 +22,15 @@
 		"eslint": "^3.19.0",
 		"eslint-config-google": "^0.7.1",
 		"eslint-plugin-react": "^7.0.1",
+		"husky": "^0.13.3",
 		"jest": "20.0.4",
+		"lint-staged": "^3.5.0",
 		"react-test-renderer": "16.0.0-alpha.6"
 	},
 	"jest": {
 		"preset": "react-native"
-	}
+	},
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
+  }
 }
