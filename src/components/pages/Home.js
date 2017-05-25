@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Linking, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Button, SocialIcon } from 'react-native-elements';
 
+const socialPlatforms = {
+  github: 'https://github.com/cpoliver',
+  linkedin: 'https://linkedin.com/in/cpoliver',
+  twitter: 'https://twitter.com/cpoliver'
+};
+
 class Home extends Component {
+  openSocialUrl(platform) {
+    const url = socialPlatforms[platform];
+    Linking.openURL(url);
+  }
+
   render() {
     StatusBar.setBarStyle('light-content', true);
 
@@ -15,9 +26,9 @@ class Home extends Component {
         <View>
           <Text style={styles.footerText}>made with love by @cpoliver</Text>
           <View style={styles.iconContainer}>
-            <SocialIcon type="github" light />
-            <SocialIcon type="linkedin" light />
-            <SocialIcon type="twitter" light />
+            <SocialIcon type="github" onPress={() => this.openSocialUrl('github')} light />
+            <SocialIcon type="linkedin" onPress={() => this.openSocialUrl('linkedin')} light />
+            <SocialIcon type="twitter" onPress={() => this.openSocialUrl('twitter')} light />
           </View>
         </View>
       </View>
