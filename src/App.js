@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Swiper from 'react-native-swiper';
 
 import { Decider, Home, Profile, Randomizer, Settings } from './components/pages';

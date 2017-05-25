@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Linking, StatusBar, StyleSheet, Text, View } from 'react-native';
-import { Button, SocialIcon } from 'react-native-elements';
+import { SocialIcon } from 'react-native-elements';
 
 const socialPlatforms = {
   github: 'https://github.com/cpoliver',
