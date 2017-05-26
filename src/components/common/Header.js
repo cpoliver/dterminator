@@ -11,14 +11,13 @@ const Header = ({ children }) => (
 const styles = StyleSheet.create({
   container: {
 		alignItems: 'center',
-		alignSelf: 'flex-start',
+		alignSelf: 'stretch',
 		backgroundColor: '#201b21',
 		elevation: 2,
 		height: 60,
 		justifyContent: 'center',
 		paddingTop: 15,
-		position: 'relative',
-		width: 1000
+		position: 'relative'
   },
 	text: {
 		color: '#25c7ee',

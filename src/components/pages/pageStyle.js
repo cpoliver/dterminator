@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
 	view: {
-		alignItems: 'center',
+		alignItems: 'stretch',
 		backgroundColor: '#f6f7fb',
 		flex: 1,
-		flexDirection: 'row',
-		justifyContent: 'center'
+		flexDirection: 'column',
+		justifyContent: 'flex-start'
 	}
 });
