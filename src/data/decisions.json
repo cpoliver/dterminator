@@ -1,0 +1,40 @@
+[{
+  "name": "What to have for dinner",
+  "options": [
+    "kebab",
+    "soup",
+    "salad",
+    "pizza",
+    "curry"
+  ]
+}, {
+  "name": "Which chore to do next",
+  "options": [
+    "vacuum",
+    "wash dishes",
+    "laundry",
+    "clean bathroom"
+  ]
+}, {
+  "name": "What type of drink to order next",
+  "options": [
+    "beer",
+    "cider",
+    "G&T",
+    "single malt",
+    "white russian",
+    "espresso martini"
+  ]
+}, {
+  "name": "What music to listen to",
+	"options": [
+	  "drum 'n' bass",
+		"hip hop",
+		"jazz",
+		"rock",
+		"metal",
+		"big beat",
+		"house",
+		"ambient"
+	]
+}]
