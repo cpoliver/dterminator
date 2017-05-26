@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+
+import styles from './pageStyle';
+import { Header } from '../common';
 
 class Profile extends Component {
   render() {
     return (
       <View style={styles.view}>
-        <Text>Profile</Text>
+        <Header>Profile</Header>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
 
 export { Profile };
