@@ -6,14 +6,16 @@
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
 		"lint": "node_modules/.bin/eslint -c .eslintrc .",
-    "precommit": "lint-staged"
+		"precommit": "lint-staged"
 	},
 	"dependencies": {
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.0",
 		"react-native-elements": "^0.12.2",
 		"react-native-swiper": "^1.5.4",
-		"react-native-vector-icons": "^4.1.1"
+		"react-native-vector-icons": "^4.1.1",
+		"react-redux": "^5.0.5",
+		"redux": "^3.6.0"
 	},
 	"devDependencies": {
 		"babel-eslint": "^7.2.3",
@@ -30,7 +32,10 @@
 	"jest": {
 		"preset": "react-native"
 	},
-  "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
-  }
+	"lint-staged": {
+		"*.js": [
+			"eslint --fix",
+			"git add"
+		]
+	}
 }
