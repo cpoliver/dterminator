@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Linking, StatusBar, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Linking, StyleSheet, Text, View } from 'react-native';
 import { SocialIcon } from 'react-native-elements';
 
 const socialPlatforms = {
@@ -8,33 +8,27 @@ const socialPlatforms = {
   twitter: 'https://twitter.com/cpoliver'
 };
 
-class Home extends Component {
-  openSocialUrl(platform) {
-    const url = socialPlatforms[platform];
-    Linking.openURL(url);
-  }
+const openSocialUrl = (platform) => {
+  const url = socialPlatforms[platform];
+  Linking.openURL(url);
+};
 
-  render() {
-    StatusBar.setBarStyle('light-content', true);
-
-    return (
-      <View style={styles.pageContainer}>
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>dterminator</Text>
-          <Text style={styles.subtitle}>an app for the indecisive</Text>
-        </View>
-        <View>
-          <Text style={styles.footerText}>made with love by @cpoliver</Text>
-          <View style={styles.iconContainer}>
-            <SocialIcon type="github" onPress={() => this.openSocialUrl('github')} light />
-            <SocialIcon type="linkedin" onPress={() => this.openSocialUrl('linkedin')} light />
-            <SocialIcon type="twitter" onPress={() => this.openSocialUrl('twitter')} light />
-          </View>
-        </View>
+const Home = () => (
+  <View style={styles.pageContainer}>
+    <View style={styles.titleContainer}>
+      <Text style={styles.title}>dterminator</Text>
+      <Text style={styles.subtitle}>an app for the indecisive</Text>
+    </View>
+    <View>
+      <Text style={styles.footerText}>made with love by @cpoliver</Text>
+      <View style={styles.iconContainer}>
+        <SocialIcon type="github" onPress={() => openSocialUrl('github')} light />
+        <SocialIcon type="linkedin" onPress={() => openSocialUrl('linkedin')} light />
+        <SocialIcon type="twitter" onPress={() => openSocialUrl('twitter')} light />
       </View>
-    );
-  }
-}
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   footerText: {

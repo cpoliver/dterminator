@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
@@ -7,26 +7,20 @@ import { connect } from 'react-redux';
 import pageStyles from './pageStyles';
 import { Header } from '../common';
 
-class DeciderPage extends Component {
-	renderItems() {
-		return this.props.decider.decisions.map((item, index) => (
-      <ListItem key={index} title={item.name} />
-		));
-	}
+const Decider = ({ decider }) => (
+  <View style={pageStyles.view}>
+    <Header>Decider</Header>
+    <List style={{ flex: 1 }}>
+    {
+      decider.decisions.map((item, index) => (
+        <ListItem key={index} title={item.name} />
+      ))
+    }
+    </List>
+  </View>
+);
 
-  render() {
-    return (
-      <View style={pageStyles.view}>
-        <Header>Decider</Header>
-				<List style={{ flex: 1 }}>
-					{this.renderItems()}
-				</List>
-			</View>
-    );
-  }
-}
-
-DeciderPage.propTypes = {
+Decider.propTypes = {
   decider: PropTypes.shape({
     decisions: PropTypes.arrayOf(
       PropTypes.shape({
@@ -38,6 +32,6 @@ DeciderPage.propTypes = {
 };
 
 const mapStateToProps = ({ decider }) => ({ decider });
+const connected = connect(mapStateToProps)(Decider);
 
-const Decider = connect(mapStateToProps)(DeciderPage);
-export { Decider };
+export { connected as Decider };
