@@ -5,7 +5,7 @@ import { FormInput, FormLabel, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
 import pageStyles from './pageStyles';
-import { Header } from '../common';
+import { Header, ListItemEditable } from '../common';
 
 const DecisionDetail = ({ name, options }) => (
   <View style={pageStyles.view}>
@@ -13,7 +13,11 @@ const DecisionDetail = ({ name, options }) => (
     <FormLabel>Name</FormLabel>
     <FormInput value={name} />
     <List>
-      {options.map((option, index) => <ListItem key={index}title={option} />)}
+    {
+      options.map((option, index) => (
+        <ListItem key={index} component={() => <ListItemEditable value={option} />} />
+      ))
+    }
     </List>
   </View>
 );
