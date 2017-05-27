@@ -3,7 +3,7 @@ import decisions from '../data/decisions.json';
 
 const initState = {
   decisions,
-  selectedDecision: {},
+  selectedDecision: decisions[0],
   outcome: {}
 };
 
