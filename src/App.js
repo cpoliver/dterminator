@@ -4,7 +4,9 @@ import { createStore } from 'redux';
 import Swiper from 'react-native-swiper';
 
 import reducers from './reducers';
-import { Decider, Home, Profile, Randomizer, Settings } from './components/pages';
+import {
+  Decider, DecisionDetail, Home, Profile, Randomizer, Settings
+} from './components/pages';
 
 const App = () => (
   <Provider store={createStore(reducers)}>
@@ -16,6 +18,7 @@ const App = () => (
         <Settings />
       </Swiper>
       <Decider />
+      <DecisionDetail />
     </Swiper>
   </Provider>
 );
