@@ -1,0 +1,1 @@
+export const SELECT_DECISION = 'SELECT_DECISION';
