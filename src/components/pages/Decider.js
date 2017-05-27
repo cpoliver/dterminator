@@ -27,14 +27,14 @@ class DeciderPage extends Component {
 }
 
 DeciderPage.propTypes = {
-  decider: {
+  decider: PropTypes.shape({
     decisions: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
         options: PropTypes.arrayOf(PropTypes.string)
       })
     )
-  }
+  })
 };
 
 const mapStateToProps = ({ decider }) => ({ decider });
