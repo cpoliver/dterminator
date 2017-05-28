@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
-import deciderReducer from './deciderReducer';
+import decisionsReducer from './decisionsReducer';
+import selectedDecisionReducer from './selectedDecisionReducer';
 
 export default combineReducers({
-  decider: deciderReducer
+  decisions: decisionsReducer,
+  selectedDecision: selectedDecisionReducer
 });

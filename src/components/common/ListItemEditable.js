@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 import { FormInput, Icon } from 'react-native-elements';
 
-const ListItemEditable = ({ value }) => (
-  <View style={styles.container}>
-    <View style={styles.inputContainer}>
-      <FormInput value={value} />
-    </View>
-    <View style={{ }}>
-      <Icon name="trash-o" type="font-awesome" size={18} color="#201b21" reverse />
-    </View>
-  </View>
-);
+class ListItemEditable extends Component {
+  state = { value: '' }
+
+  componentWillMount() {
+    this.setState({ value: this.props.value });
+  }
+
+  render() {
+    const { id, onChangeValue } = this.props;
+    const { value } = this.state;
+
+    return (
+      <View style={styles.container}>
+        <View style={styles.inputContainer}>
+          <FormInput
+            value={value}
+            onChangeText={text => this.setState({ value: text })}
+            onBlur={() => onChangeValue({ id, value })}
+          />
+        </View>
+        <View>
+          <Icon name="trash-o" type="font-awesome" size={18} color="#201b21" reverse />
+        </View>
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -32,7 +49,9 @@ ListItemEditable.defaultProps = {
 };
 
 ListItemEditable.propTypes = {
-  value: PropTypes.string.isRequired
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  value: PropTypes.string.isRequired,
+  onChangeValue: PropTypes.func.isRequired,
 };
 
 export { ListItemEditable };

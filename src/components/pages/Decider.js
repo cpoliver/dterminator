@@ -7,12 +7,12 @@ import { connect } from 'react-redux';
 import pageStyles from './pageStyles';
 import { Header } from '../common';
 
-const Decider = ({ decider }) => (
+const Decider = ({ decisions }) => (
   <View style={pageStyles.view}>
     <Header>Decider</Header>
     <List style={{ flex: 1 }}>
     {
-      decider.decisions.map((item, index) => (
+      decisions.map((item, index) => (
         <ListItem key={index} title={item.name} />
       ))
     }
@@ -21,17 +21,15 @@ const Decider = ({ decider }) => (
 );
 
 Decider.propTypes = {
-  decider: PropTypes.shape({
-    decisions: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string,
-        options: PropTypes.arrayOf(PropTypes.string)
-      })
-    )
-  })
+  decisions: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      options: PropTypes.arrayOf(PropTypes.string)
+    })
+  )
 };
 
-const mapStateToProps = ({ decider }) => ({ decider });
+const mapStateToProps = ({ decisions }) => ({ decisions });
 const connected = connect(mapStateToProps)(Decider);
 
 export { connected as Decider };
