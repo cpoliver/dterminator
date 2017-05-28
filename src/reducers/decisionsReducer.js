@@ -1,7 +1,9 @@
 import decisions from '../data/decisions.json';
 
-const decisionsReducer = () => {
-  return decisions;
+const initState = decisions;
+
+const decisionsReducer = (state = initState) => {
+  return state;
 };
 
 export default decisionsReducer;

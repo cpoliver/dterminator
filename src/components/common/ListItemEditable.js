@@ -11,7 +11,7 @@ class ListItemEditable extends Component {
   }
 
   render() {
-    const { id, onChangeValue } = this.props;
+    const { id, onChangeValue, onDeleteButtonPress } = this.props;
     const { value } = this.state;
 
     return (
@@ -24,7 +24,14 @@ class ListItemEditable extends Component {
           />
         </View>
         <View>
-          <Icon name="trash-o" type="font-awesome" size={18} color="#201b21" reverse />
+          <Icon
+            onPress={() => onDeleteButtonPress({ id, value })}
+            name="trash-o"
+            type="font-awesome"
+            size={18}
+            color="#201b21"
+            reverse
+          />
         </View>
       </View>
     );
@@ -52,6 +59,7 @@ ListItemEditable.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   value: PropTypes.string.isRequired,
   onChangeValue: PropTypes.func.isRequired,
+  onDeleteButtonPress: PropTypes.func.isRequired
 };
 
 export { ListItemEditable };
