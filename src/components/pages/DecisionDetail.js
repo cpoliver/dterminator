@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
-import { FormInput, FormLabel, List, ListItem } from 'react-native-elements';
+import { StyleSheet, View } from 'react-native';
+import { FormInput, FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import { removeOption, updateOption } from '../../actions/deciderActions';
+import { addOption, removeOption, updateOption } from '../../actions/deciderActions';
 import pageStyles from './pageStyles';
 import { Header, ListItemEditable } from '../common';
 
@@ -21,7 +21,7 @@ const createListItem = (index, value, removeOption, updateOption) => (
   } />
 );
 
-const DecisionDetail = ({ name, options, removeOption, updateOption }) => (
+const DecisionDetail = ({ name, options, addOption, removeOption, updateOption }) => (
   <View style={pageStyles.view}>
     <Header>Decision Detail</Header>
     <FormLabel>Name</FormLabel>
@@ -31,12 +31,22 @@ const DecisionDetail = ({ name, options, removeOption, updateOption }) => (
       options.map((value, index) => createListItem(index, value, removeOption, updateOption))
     }
     </List>
+    <View style={styles.buttonContainer}>
+      <Icon name="add" reverse onPress={() => addOption()} />
+    </View>
   </View>
 );
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    alignItems: 'flex-end'
+  }
+});
 
 DecisionDetail.propTypes = {
   name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  addOption: PropTypes.func.isRequired,
   removeOption: PropTypes.func.isRequired,
   updateOption: PropTypes.func.isRequired
 };
@@ -47,6 +57,7 @@ const mapStateToProps = ({ selectedDecision }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  addOption: () => dispatch(addOption()),
   updateOption: option => dispatch(updateOption(option)),
   removeOption: option => dispatch(removeOption(option))
 });

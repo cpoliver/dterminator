@@ -8,9 +8,8 @@ export const REMOVE_DECISION = 'REMOVE_DECISION';
 export const SAVE_DECISION_CHANGES = 'SAVE_DECISION_CHANGES';
 export const UPDATE_DECISION = 'UPDATE_DECISION';
 
-export const addOption = option => ({
-  type: ADD_OPTION,
-  payload: option
+export const addOption = () => ({
+  type: ADD_OPTION
 });
 
 export const removeOption = option => ({
