@@ -1,42 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
-import { FormInput, Icon } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 
-class EditableListItem extends Component {
-  state = { value: '' }
+import { Input } from './Input';
 
-  componentWillMount() {
-    this.setState({ value: this.props.value });
-  }
-
-  render() {
-    const { id, onChangeValue, onDeleteButtonPress } = this.props;
-    const { value } = this.state;
-
-    return (
-      <View style={styles.container}>
-        <View style={styles.inputContainer}>
-          <FormInput
-            value={value}
-            onChangeText={text => this.setState({ value: text })}
-            onBlur={() => onChangeValue({ id, value })}
-          />
-        </View>
-        <View>
-          <Icon
-            onPress={() => onDeleteButtonPress({ id, value })}
-            name="trash-o"
-            type="font-awesome"
-            size={18}
-            color="#201b21"
-            reverse
-          />
-        </View>
-      </View>
-    );
-  }
-}
+const EditableListItem = ({ id, value, onChangeValue, onDeleteButtonPress }) => (
+  <View style={styles.container}>
+    <View style={styles.inputContainer}>
+      <Input
+        id={id}
+        value={value}
+        onChangeValue={onChangeValue}
+      />
+    </View>
+    <View>
+      <Icon
+        onPress={() => onDeleteButtonPress({ id, value })}
+        name="trash-o"
+        type="font-awesome"
+        size={18}
+        color="#201b21"
+        reverse
+      />
+    </View>
+  </View>
+);
 
 const styles = StyleSheet.create({
   container: {
