@@ -3,7 +3,7 @@ import { append, assocPath, complement, evolve, filter, isNil } from 'ramda';
 import decisions from '../data/decisions.json';
 import { ADD_OPTION, REMOVE_OPTION, UPDATE_OPTION } from '../actions/deciderActions';
 
-const initState = decisions[1];
+const initState = decisions[3];
 
 const removeNullOptions = state => evolve({ options: filter(complement(isNil)) }, state);
 

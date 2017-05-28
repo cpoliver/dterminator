@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { FormInput, FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
@@ -26,11 +26,13 @@ const DecisionDetail = ({ name, options, addOption, removeOption, updateOption }
     <Header>Decision Detail</Header>
     <FormLabel>Name</FormLabel>
     <FormInput value={name} />
-    <List containerStyle={{ borderWidth: 0 }}>
-    {
-      options.map((value, index) => createListItem(index, value, removeOption, updateOption))
-    }
-    </List>
+    <ScrollView>
+      <List containerStyle={{ borderWidth: 0 }}>
+      {
+        options.map((value, index) => createListItem(index, value, removeOption, updateOption))
+      }
+      </List>
+    </ScrollView>
     <View style={styles.buttonContainer}>
       <Icon name="add" reverse onPress={() => addOption()} />
     </View>
@@ -39,7 +41,9 @@ const DecisionDetail = ({ name, options, addOption, removeOption, updateOption }
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    alignItems: 'flex-end'
+    alignItems: 'flex-end',
+    backgroundColor: '#f6f7fb',
+    padding: 4
   }
 });
 
