@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 import { FormInput, Icon } from 'react-native-elements';
 
-class ListItemEditable extends Component {
+class EditableListItem extends Component {
   state = { value: '' }
 
   componentWillMount() {
@@ -51,15 +51,15 @@ const styles = StyleSheet.create({
   }
 });
 
-ListItemEditable.defaultProps = {
+EditableListItem.defaultProps = {
   value: ''
 };
 
-ListItemEditable.propTypes = {
+EditableListItem.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   value: PropTypes.string.isRequired,
   onChangeValue: PropTypes.func.isRequired,
   onDeleteButtonPress: PropTypes.func.isRequired
 };
 
-export { ListItemEditable };
+export { EditableListItem };

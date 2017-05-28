@@ -6,12 +6,12 @@ import { connect } from 'react-redux';
 
 import { addOption, removeOption, updateOption } from '../../actions/deciderActions';
 import pageStyles from './pageStyles';
-import { Header, ListItemEditable } from '../common';
+import { Header, EditableListItem } from '../common';
 
 const createListItem = (index, value, removeOption, updateOption) => (
   <ListItem key={index} component={
     () => (
-      <ListItemEditable
+      <EditableListItem
         id={index}
         value={value}
         onDeleteButtonPress={removeOption}
