@@ -10,8 +10,8 @@ const removeNullOptions = state => evolve({ options: filter(complement(isNil)) }
 const selectedDecisionReducer = (state = initState, { type, payload = {} }) => {
   const actions = {
     [ADD_OPTION]: evolve({ options: append('') }, state),
-    [REMOVE_OPTION]: assocPath(['options', payload.id], null, state),
-    [UPDATE_OPTION]: assocPath(['options', payload.id], payload.value, state)
+    [REMOVE_OPTION]: assocPath(['options', payload.index], null, state),
+    [UPDATE_OPTION]: assocPath(['options', payload.index], payload.value, state)
   };
 
   const newState = actions[type] || state;

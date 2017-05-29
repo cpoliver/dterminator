@@ -5,18 +5,17 @@ import { Icon } from 'react-native-elements';
 
 import { Input } from './Input';
 
-const EditableListItem = ({ id, value, onChangeValue, onDeleteButtonPress }) => (
+const EditableListItem = ({ value, onChangeValue, onDeleteButtonPress }) => (
   <View style={styles.container}>
     <View style={styles.inputContainer}>
       <Input
-        id={id}
         value={value}
         onChangeValue={onChangeValue}
       />
     </View>
     <View>
       <Icon
-        onPress={() => onDeleteButtonPress({ id, value })}
+        onPress={onDeleteButtonPress}
         name="trash-o"
         type="font-awesome"
         size={18}
@@ -45,7 +44,6 @@ EditableListItem.defaultProps = {
 };
 
 EditableListItem.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   value: PropTypes.string.isRequired,
   onChangeValue: PropTypes.func.isRequired,
   onDeleteButtonPress: PropTypes.func.isRequired

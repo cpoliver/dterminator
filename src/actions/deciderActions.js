@@ -12,9 +12,9 @@ export const addOption = () => ({
   type: ADD_OPTION
 });
 
-export const removeOption = option => ({
+export const removeOption = index => ({
   type: REMOVE_OPTION,
-  payload: option
+  payload: { index }
 });
 
 export const updateOption = option => ({

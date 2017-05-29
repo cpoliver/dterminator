@@ -10,7 +10,7 @@ class Input extends Component {
   }
 
   render() {
-    const { id, onChangeValue } = this.props;
+    const { onChangeValue } = this.props;
     const { value } = this.state;
 
     return (
@@ -18,7 +18,7 @@ class Input extends Component {
         value={value}
         autoCapitalize="none"
         autoCorrect={false}
-        onBlur={() => onChangeValue({ id, value })}
+        onBlur={() => onChangeValue(value)}
         onChangeText={text => this.setState({ value: text })}
       />
     );
@@ -30,7 +30,6 @@ Input.defaultProps = {
 };
 
 Input.propTypes = {
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   value: PropTypes.string.isRequired,
   onChangeValue: PropTypes.func.isRequired
 };

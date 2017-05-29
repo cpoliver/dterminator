@@ -12,10 +12,9 @@ const createListItem = (index, value, removeOption, updateOption) => (
   <ListItem key={index} component={
     () => (
       <EditableListItem
-        id={index}
         value={value}
-        onDeleteButtonPress={removeOption}
-        onChangeValue={updateOption}
+        onDeleteButtonPress={removeOption(index)}
+        onChangeValue={updateOption(index)}
       />
     )
   } />
@@ -62,8 +61,8 @@ const mapStateToProps = ({ selectedDecision }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addOption: () => dispatch(addOption()),
-  updateOption: option => dispatch(updateOption(option)),
-  removeOption: option => dispatch(removeOption(option))
+  updateOption: index => value => dispatch(updateOption({ index, value })),
+  removeOption: index => () => dispatch(removeOption(index))
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(DecisionDetail);
