@@ -1,7 +1,7 @@
 import { append, assocPath, complement, evolve, filter, isNil } from 'ramda';
 
 import decisions from '../data/decisions.json';
-import { ADD_OPTION, REMOVE_OPTION, UPDATE_OPTION } from '../actions/deciderActions';
+import { ADD_OPTION, REMOVE_OPTION, UPDATE_OPTION, UPDATE_DECISION } from '../actions/deciderActions';
 
 const initState = decisions[3];
 
@@ -11,7 +11,8 @@ const selectedDecisionReducer = (state = initState, { type, payload = {} }) => {
   const actions = {
     [ADD_OPTION]: evolve({ options: append('') }, state),
     [REMOVE_OPTION]: assocPath(['options', payload.index], null, state),
-    [UPDATE_OPTION]: assocPath(['options', payload.index], payload.value, state)
+    [UPDATE_OPTION]: assocPath(['options', payload.index], payload.value, state),
+    [UPDATE_DECISION]: assocPath(['name'], payload, state)
   };
 
   const newState = actions[type] || state;

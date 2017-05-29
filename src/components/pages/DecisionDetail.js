@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { FormInput, FormLabel, Icon, List, ListItem } from 'react-native-elements';
+import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import { addOption, removeOption, updateOption } from '../../actions/deciderActions';
+import { addOption, removeOption, updateOption, updateDecision } from '../../actions/deciderActions';
 import pageStyles from './pageStyles';
-import { Header, EditableListItem } from '../common';
+import { EditableListItem, Header, Input } from '../common';
 
 const createListItem = (index, value, removeOption, updateOption) => (
   <ListItem key={index} component={
@@ -20,11 +20,11 @@ const createListItem = (index, value, removeOption, updateOption) => (
   } />
 );
 
-const DecisionDetail = ({ name, options, addOption, removeOption, updateOption }) => (
+const DecisionDetail = ({ name, options, addOption, removeOption, updateOption, updateDecision }) => (
   <View style={pageStyles.view}>
     <Header>Decision Detail</Header>
     <FormLabel>Name</FormLabel>
-    <FormInput value={name} />
+    <Input value={name} onChangeValue={updateDecision} />
     <ScrollView>
       <List containerStyle={{ borderWidth: 0 }}>
       {
@@ -51,7 +51,8 @@ DecisionDetail.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   addOption: PropTypes.func.isRequired,
   removeOption: PropTypes.func.isRequired,
-  updateOption: PropTypes.func.isRequired
+  updateOption: PropTypes.func.isRequired,
+  updateDecision: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ selectedDecision }) => ({
@@ -62,7 +63,8 @@ const mapStateToProps = ({ selectedDecision }) => ({
 const mapDispatchToProps = (dispatch) => ({
   addOption: () => dispatch(addOption()),
   updateOption: index => value => dispatch(updateOption({ index, value })),
-  removeOption: index => () => dispatch(removeOption(index))
+  removeOption: index => () => dispatch(removeOption(index)),
+  updateDecision: decision => dispatch(updateDecision(decision))
 });
 
 const connected = connect(mapStateToProps, mapDispatchToProps)(DecisionDetail);
