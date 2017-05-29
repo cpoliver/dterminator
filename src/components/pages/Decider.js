@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
+import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import pageStyles from './pageStyles';
@@ -13,7 +14,7 @@ const Decider = ({ decisions }) => (
     <List style={{ flex: 1 }}>
     {
       decisions.map((item, index) => (
-        <ListItem key={index} title={item.name} />
+        <ListItem key={index} title={item.name} onPress={() => Actions.decisionDetail()} />
       ))
     }
     </List>
