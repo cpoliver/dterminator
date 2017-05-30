@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
 		alignSelf: 'stretch',
 		backgroundColor: '#201b21',
 		elevation: 2,
-		height: 60,
+		height: 64,
 		justifyContent: 'center',
-		paddingTop: 15,
+		paddingTop: 20,
 		position: 'relative'
   },
 	text: {
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 Header.propTypes = {
-	children: PropTypes.string.isRequired
+	children: PropTypes.string
 };
 
 export { Header };

@@ -22,10 +22,10 @@ const createListItem = (index, value, removeOption, updateOption) => (
 
 const DecisionDetail = ({ name, options, addOption, removeOption, updateOption, updateDecision }) => (
   <View style={pageStyles.view}>
-    <Header>Decision Detail</Header>
-    <FormLabel>Name</FormLabel>
-    <Input value={name} onChangeValue={updateDecision} />
+    <Header />
     <ScrollView>
+      <FormLabel>Name</FormLabel>
+      <Input value={name} onChangeValue={updateDecision} />
       <List containerStyle={{ borderWidth: 0 }}>
       {
         options.map((value, index) => createListItem(index, value, removeOption, updateOption))

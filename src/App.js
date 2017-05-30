@@ -31,14 +31,31 @@ class AppWithRouting extends React.Component {
     return (
       <Provider store={store}>
         <Router>
-          <Scene key="root">
-            <Scene key="home" component={App} title="Home"/>
-            <Scene key="decisionDetail" component={DecisionDetail} title="Decision Detail" />
+          <Scene key="root" {...styles}>
+            <Scene key="home" component={App} hideNavBar={true} />
+            <Scene key="decisionDetail" title="Decision Detail" component={DecisionDetail} hideNavBar={false} />
           </Scene>
         </Router>
       </Provider>
     );
   }
 }
+
+const styles = {
+  navigationBarStyle: {
+    backgroundColor: '#201b21'
+  },
+  leftButtonIconStyle: {
+    tintColor: '#25c7ee'
+  },
+  rightButtonIconStyle: {
+    tintColor: '#25c7ee'
+  },
+  titleStyle: {
+    color: '#25c7ee',
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
+};
 
 export default AppWithRouting;
