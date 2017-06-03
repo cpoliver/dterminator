@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   }
 });
 
-Placeholder.PropTypes = {
+Placeholder.propTypes = {
   iconName: PropTypes.string.isRequired
 };
 
