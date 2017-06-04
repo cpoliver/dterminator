@@ -34,7 +34,8 @@
 	},
 	"jest": {
 		"preset": "react-native",
-    "setupFiles": ["./jest.js"]
+    "setupFiles": ["./jest.js"],
+    "collectCoverageFrom" : ["src/**/*.js"]
 	},
 	"lint-staged": {
 		"*.js": [

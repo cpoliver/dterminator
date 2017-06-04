@@ -1,5 +1,3 @@
-console.info = () => {}; // eslint-disable-line no-console
-
 jest.mock('Linking', () => ({
   addEventListener: jest.fn(),
   removeEventListener: jest.fn(),
