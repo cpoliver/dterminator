@@ -1,6 +1,6 @@
 import { append } from 'ramda';
 
-import sdr from './selectedDecisionReducer';
+import reducer from './selectedDecisionReducer';
 
 const mockState = {
   name: 'decision name',
@@ -13,21 +13,21 @@ const mockState = {
 
 describe('the selected decision reducer', () => {
   it('should return the correct initial state', () => {
-    const actual = sdr();
+    const actual = reducer();
 
     expect(actual).toEqual({});
   });
 
   describe('when called with an unrelated action type', () => {
     it('should return the unmodified state', () => {
-      const actual = sdr(mockState, { type: 'SOME_ACTION' });
+      const actual = reducer(mockState, { type: 'SOME_ACTION' });
 
       expect(actual).toEqual(mockState);
     });
   });
 
   it('should add a new option to the state', () => {
-    const actual = sdr(mockState, { type: 'ADD_OPTION' });
+    const actual = reducer(mockState, { type: 'ADD_OPTION' });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -36,7 +36,7 @@ describe('the selected decision reducer', () => {
   });
 
   it('should remove a given option from the state', () => {
-    const actual = sdr(mockState, { type: 'REMOVE_OPTION', payload: { index: 1 } });
+    const actual = reducer(mockState, { type: 'REMOVE_OPTION', payload: { index: 1 } });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -49,14 +49,14 @@ describe('the selected decision reducer', () => {
 
   it('should replace the state with a new selected decision', () => {
     const newDecision = { new: true };
-    const actual = sdr(mockState, { type: 'SELECT_DECISION', payload: newDecision });
+    const actual = reducer(mockState, { type: 'SELECT_DECISION', payload: newDecision });
 
     expect(actual).toEqual(newDecision);
   });
 
   it('should update a given option in the the state', () => {
     const updatedOption = { index: 0, value: 'updated' };
-    const actual = sdr(mockState, { type: 'UPDATE_OPTION', payload: updatedOption });
+    const actual = reducer(mockState, { type: 'UPDATE_OPTION', payload: updatedOption });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -70,7 +70,7 @@ describe('the selected decision reducer', () => {
 
   it('should update the selected decision name in the state', () => {
     const newName = 'new decision name';
-    const actual = sdr(mockState, { type: 'UPDATE_DECISION', payload: newName });
+    const actual = reducer(mockState, { type: 'UPDATE_DECISION', payload: newName });
 
     expect(actual).toEqual({
       name: newName,
