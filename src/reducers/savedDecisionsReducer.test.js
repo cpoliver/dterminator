@@ -1,8 +1,8 @@
 import decisions from '../data/decisions.json';
 
-import reducer from './decisionsReducer';
+import reducer from './savedDecisionsReducer';
 
-describe('the decisions reducer', () => {
+describe('the saved decisions reducer', () => {
   it('should return the correct initial state', () => {
     const actual = reducer();
 
