@@ -1,6 +1,6 @@
 import decisions from '../data/decisions.json';
 
-import reducer from './DecisionsReducer';
+import reducer from './decisionsReducer';
 
 describe('the decisions reducer', () => {
   it('should return the correct initial state', () => {
