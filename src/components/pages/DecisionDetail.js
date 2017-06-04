@@ -20,7 +20,7 @@ const createListItem = (index, value, removeOption, updateOption) => (
   } />
 );
 
-const DecisionDetail = ({ name, options, addOption, removeOption, updateOption, updateDecision }) => (
+const DecisionDetailComponent = ({ name, options, addOption, removeOption, updateOption, updateDecision }) => (
   <View style={pageStyles.view}>
     <Header />
     <ScrollView>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   }
 });
 
-DecisionDetail.propTypes = {
+DecisionDetailComponent.propTypes = {
   name: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   addOption: PropTypes.func.isRequired,
@@ -67,6 +67,6 @@ const mapDispatchToProps = dispatch => ({
   updateDecision: decision => dispatch(updateDecision(decision))
 });
 
-const connected = connect(mapStateToProps, mapDispatchToProps)(DecisionDetail);
+const DecisionDetail = connect(mapStateToProps, mapDispatchToProps)(DecisionDetailComponent);
 
-export { connected as DecisionDetail };
+export { DecisionDetail, DecisionDetailComponent };

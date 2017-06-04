@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the DecisionDetail component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#f6f7fb",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <Header />
+  <ScrollViewMock>
+    <FormLabel>
+      Name
+    </FormLabel>
+    <Input
+      onChangeValue={[Function]}
+      value="What to have for dinner"
+    />
+    <List
+      containerStyle={
+        Object {
+          "borderWidth": 0,
+        }
+      }
+    >
+      <ListItem
+        chevronColor="#bdc6cf"
+        component={[Function]}
+        hideChevron={false}
+        rightIcon={
+          Object {
+            "name": "chevron-right",
+          }
+        }
+        roundAvatar={false}
+        switchButton={false}
+        textInputEditable={true}
+        underlayColor="white"
+      />
+      <ListItem
+        chevronColor="#bdc6cf"
+        component={[Function]}
+        hideChevron={false}
+        rightIcon={
+          Object {
+            "name": "chevron-right",
+          }
+        }
+        roundAvatar={false}
+        switchButton={false}
+        textInputEditable={true}
+        underlayColor="white"
+      />
+      <ListItem
+        chevronColor="#bdc6cf"
+        component={[Function]}
+        hideChevron={false}
+        rightIcon={
+          Object {
+            "name": "chevron-right",
+          }
+        }
+        roundAvatar={false}
+        switchButton={false}
+        textInputEditable={true}
+        underlayColor="white"
+      />
+      <ListItem
+        chevronColor="#bdc6cf"
+        component={[Function]}
+        hideChevron={false}
+        rightIcon={
+          Object {
+            "name": "chevron-right",
+          }
+        }
+        roundAvatar={false}
+        switchButton={false}
+        textInputEditable={true}
+        underlayColor="white"
+      />
+      <ListItem
+        chevronColor="#bdc6cf"
+        component={[Function]}
+        hideChevron={false}
+        rightIcon={
+          Object {
+            "name": "chevron-right",
+          }
+        }
+        roundAvatar={false}
+        switchButton={false}
+        textInputEditable={true}
+        underlayColor="white"
+      />
+    </List>
+  </ScrollViewMock>
+  <View
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "backgroundColor": "#f6f7fb",
+        "padding": 4,
+      }
+    }
+  >
+    <Icon
+      color="black"
+      name="add"
+      onPress={[Function]}
+      raised={false}
+      reverse={true}
+      reverseColor="white"
+      size={24}
+      underlayColor="white"
+    />
+  </View>
+</View>
+`;
