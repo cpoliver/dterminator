@@ -2,12 +2,13 @@ import React from 'react';
 import { StatusBar } from 'react-native';
 import { Router } from 'react-native-router-flux';
 import { connect, Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
+import logger from 'redux-logger';
 
 import { scenes } from './Routing';
-import reducers from './reducers';
+import rootReducer from './reducers';
 
-const store = createStore(reducers);
+const store = createStore(rootReducer, applyMiddleware(logger));
 const RouterWithRedux = connect()(Router);
 
 StatusBar.setBarStyle('light-content', true);
