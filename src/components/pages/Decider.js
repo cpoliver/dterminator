@@ -9,7 +9,7 @@ import pageStyles from './pageStyles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 
-const Decider = ({ decisions, selectDecision }) => (
+const DeciderComponent = ({ decisions, selectDecision }) => (
   <View style={pageStyles.view}>
     <Header>Decider</Header>
     <List style={{ flex: 1 }}>
@@ -25,7 +25,7 @@ const Decider = ({ decisions, selectDecision }) => (
   </View>
 );
 
-Decider.propTypes = {
+DeciderComponent.propTypes = {
   decisions: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
@@ -41,6 +41,6 @@ const mapDispatchToProps = dispatch => ({
   selectDecision: decision => dispatch(selectDecision(decision))
 });
 
-const connected = connect(mapStateToProps, mapDispatchToProps)(Decider);
+const Decider = connect(mapStateToProps, mapDispatchToProps)(DeciderComponent);
 
-export { connected as Decider };
+export { Decider, DeciderComponent };

@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Decider component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "backgroundColor": "#f6f7fb",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+    }
+  }
+>
+  <Header>
+    Decider
+  </Header>
+  <List
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <ListItem
+      chevronColor="#bdc6cf"
+      hideChevron={false}
+      onPress={[Function]}
+      rightIcon={
+        Object {
+          "name": "chevron-right",
+        }
+      }
+      roundAvatar={false}
+      switchButton={false}
+      textInputEditable={true}
+      title="What to have for dinner"
+      underlayColor="white"
+    />
+    <ListItem
+      chevronColor="#bdc6cf"
+      hideChevron={false}
+      onPress={[Function]}
+      rightIcon={
+        Object {
+          "name": "chevron-right",
+        }
+      }
+      roundAvatar={false}
+      switchButton={false}
+      textInputEditable={true}
+      title="Which chore to do next"
+      underlayColor="white"
+    />
+    <ListItem
+      chevronColor="#bdc6cf"
+      hideChevron={false}
+      onPress={[Function]}
+      rightIcon={
+        Object {
+          "name": "chevron-right",
+        }
+      }
+      roundAvatar={false}
+      switchButton={false}
+      textInputEditable={true}
+      title="What type of drink to order next"
+      underlayColor="white"
+    />
+    <ListItem
+      chevronColor="#bdc6cf"
+      hideChevron={false}
+      onPress={[Function]}
+      rightIcon={
+        Object {
+          "name": "chevron-right",
+        }
+      }
+      roundAvatar={false}
+      switchButton={false}
+      textInputEditable={true}
+      title="What music to listen to"
+      underlayColor="white"
+    />
+  </List>
+</View>
+`;
