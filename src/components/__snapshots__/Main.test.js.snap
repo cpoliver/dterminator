@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Main component should match the snapshot 1`] = `
+<_class
+  automaticallyAdjustContentInsets={false}
+  autoplay={false}
+  autoplayDirection={true}
+  autoplayTimeout={2.5}
+  bounces={false}
+  horizontal={true}
+  index={1}
+  loadMinimal={false}
+  loadMinimalSize={1}
+  loop={false}
+  pagingEnabled={true}
+  removeClippedSubviews={true}
+  scrollsToTop={false}
+  showsButtons={false}
+  showsHorizontalScrollIndicator={false}
+  showsPagination={false}
+  showsVerticalScrollIndicator={false}
+>
+  <Randomizer />
+  <_class
+    automaticallyAdjustContentInsets={false}
+    autoplay={false}
+    autoplayDirection={true}
+    autoplayTimeout={2.5}
+    bounces={false}
+    horizontal={false}
+    index={1}
+    loadMinimal={false}
+    loadMinimalSize={1}
+    loop={false}
+    pagingEnabled={true}
+    removeClippedSubviews={true}
+    scrollsToTop={false}
+    showsButtons={false}
+    showsHorizontalScrollIndicator={false}
+    showsPagination={false}
+    showsVerticalScrollIndicator={false}
+  >
+    <Profile />
+    <Home />
+    <Settings />
+  </_class>
+  <Connect(DeciderComponent) />
+</_class>
+`;
