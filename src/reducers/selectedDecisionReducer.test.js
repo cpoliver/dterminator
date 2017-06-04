@@ -1,5 +1,13 @@
 import { append } from 'ramda';
 
+import {
+  ADD_OPTION,
+  REMOVE_OPTION,
+  SELECT_DECISION,
+  UPDATE_OPTION,
+  UPDATE_DECISION_NAME
+} from '../actions/deciderActions';
+
 import reducer from './selectedDecisionReducer';
 
 const mockState = {
@@ -27,7 +35,7 @@ describe('the selected decision reducer', () => {
   });
 
   it('should add a new option to the state', () => {
-    const actual = reducer(mockState, { type: 'ADD_OPTION' });
+    const actual = reducer(mockState, { type: ADD_OPTION });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -36,7 +44,7 @@ describe('the selected decision reducer', () => {
   });
 
   it('should remove a given option from the state', () => {
-    const actual = reducer(mockState, { type: 'REMOVE_OPTION', payload: { index: 1 } });
+    const actual = reducer(mockState, { type: REMOVE_OPTION, payload: { index: 1 } });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -49,14 +57,14 @@ describe('the selected decision reducer', () => {
 
   it('should replace the state with a new selected decision', () => {
     const newDecision = { new: true };
-    const actual = reducer(mockState, { type: 'SELECT_DECISION', payload: newDecision });
+    const actual = reducer(mockState, { type: SELECT_DECISION, payload: newDecision });
 
     expect(actual).toEqual(newDecision);
   });
 
   it('should update a given option in the the state', () => {
     const updatedOption = { index: 0, value: 'updated' };
-    const actual = reducer(mockState, { type: 'UPDATE_OPTION', payload: updatedOption });
+    const actual = reducer(mockState, { type: UPDATE_OPTION, payload: updatedOption });
 
     expect(actual).toEqual({
       name: mockState.name,
@@ -70,7 +78,7 @@ describe('the selected decision reducer', () => {
 
   it('should update the selected decision name in the state', () => {
     const newName = 'new decision name';
-    const actual = reducer(mockState, { type: 'UPDATE_DECISION', payload: newName });
+    const actual = reducer(mockState, { type: UPDATE_DECISION_NAME, payload: newName });
 
     expect(actual).toEqual({
       name: newName,

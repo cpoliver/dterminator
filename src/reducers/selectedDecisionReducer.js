@@ -5,7 +5,7 @@ import {
   REMOVE_OPTION,
   SELECT_DECISION,
   UPDATE_OPTION,
-  UPDATE_DECISION
+  UPDATE_DECISION_NAME
 } from '../actions/deciderActions';
 
 const initState = {};
@@ -20,7 +20,7 @@ const selectedDecisionReducer = (state = initState, action = {}) => {
     [REMOVE_OPTION]: assocPath(['options', payload.index], null, state),
     [SELECT_DECISION]: payload,
     [UPDATE_OPTION]: assocPath(['options', payload.index], payload.value, state),
-    [UPDATE_DECISION]: assocPath(['name'], payload, state)
+    [UPDATE_DECISION_NAME]: assocPath(['name'], payload, state)
   };
 
   const newState = actions[type] || state;
