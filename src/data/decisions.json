@@ -1,4 +1,5 @@
 [{
+  "id": "000",
   "name": "What to have for dinner",
   "options": [
     "kebab",
@@ -8,6 +9,7 @@
     "curry"
   ]
 }, {
+  "id": "001",
   "name": "Which chore to do next",
   "options": [
     "vacuum",
@@ -16,6 +18,7 @@
     "clean bathroom"
   ]
 }, {
+  "id": "002",
   "name": "What type of drink to order next",
   "options": [
     "beer",
@@ -26,6 +29,7 @@
     "espresso martini"
   ]
 }, {
+  "id": "003",
   "name": "What music to listen to",
 	"options": [
 	  "drum 'n' bass",
