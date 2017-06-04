@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Header component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "stretch",
+      "backgroundColor": "#201b21",
+      "elevation": 2,
+      "height": 64,
+      "justifyContent": "center",
+      "paddingTop": 20,
+      "position": "relative",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#25c7ee",
+        "fontSize": 20,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Header Text
+  </Text>
+</View>
+`;
