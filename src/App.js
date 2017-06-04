@@ -8,9 +8,10 @@ import { createLogger } from 'redux-logger';
 import { scenes } from './Routing';
 import rootReducer from './reducers';
 
-const logger = createLogger({ level: 'info' });
+const isDev = () => process.env.NODE_ENV === `development`;
+const middleware = isDev() ? [createLogger({ level: 'info' })] : [];
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(...middleware));
 const RouterWithRedux = connect()(Router);
 
 StatusBar.setBarStyle('light-content', true);
