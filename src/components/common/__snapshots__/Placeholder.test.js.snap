@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Placeholder component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Icon
+    color="#25c7ee"
+    name="account"
+    raised={false}
+    reverse={false}
+    reverseColor="white"
+    size={92}
+    type="material-community"
+    underlayColor="white"
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#25c7ee",
+        "fontSize": 20,
+      }
+    }
+  >
+    coming soon
+  </Text>
+</View>
+`;
