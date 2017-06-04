@@ -14,7 +14,7 @@ StatusBar.setBarStyle('light-content', true);
 
 const App = () => (
   <Provider store={store}>
-    <RouterWithRedux scenes={scenes} />
+    <RouterWithRedux duration={150} scenes={scenes} />
   </Provider>
 );
 

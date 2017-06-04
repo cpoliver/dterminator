@@ -60,7 +60,7 @@ const mapStateToProps = ({ selectedDecision }) => ({
   options: selectedDecision.options
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   addOption: () => dispatch(addOption()),
   updateOption: index => value => dispatch(updateOption({ index, value })),
   removeOption: index => () => dispatch(removeOption(index)),

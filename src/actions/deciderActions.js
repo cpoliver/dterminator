@@ -6,6 +6,7 @@ export const ADD_DECISION = 'ADD_DECISION';
 export const DISCARD_DECISION_CHANGES = 'DISCARD_DECISION_CHANGES';
 export const REMOVE_DECISION = 'REMOVE_DECISION';
 export const SAVE_DECISION_CHANGES = 'SAVE_DECISION_CHANGES';
+export const SELECT_DECISION = 'SELECT_DECISION';
 export const UPDATE_DECISION = 'UPDATE_DECISION';
 
 export const addOption = () => ({
@@ -39,6 +40,11 @@ export const removeDecision = decision => ({
 
 export const saveDecisionChanges = decision => ({
   type: SAVE_DECISION_CHANGES,
+  payload: decision
+});
+
+export const selectDecision = decision => ({
+  type: SELECT_DECISION,
   payload: decision
 });
 
