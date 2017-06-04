@@ -10,6 +10,11 @@ const socialPlatforms = {
 
 const openSocialUrl = (platform) => {
   const url = socialPlatforms[platform];
+
+  if (url === undefined) {
+    throw new Error('invalid param passed to openSocialUrl');
+  }
+
   Linking.openURL(url);
 };
 
@@ -64,4 +69,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export { Home };
+export { Home, openSocialUrl };

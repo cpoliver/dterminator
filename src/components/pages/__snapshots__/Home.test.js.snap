@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Home component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#201b21",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "column",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#25c7ee",
+          "fontSize": 42,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      dterminator
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#f6f7fb",
+          "fontSize": 16,
+        }
+      }
+    >
+      an app for the indecisive
+    </Text>
+  </View>
+  <View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "#d5d4cf",
+          "fontSize": 18,
+          "marginBottom": 6,
+        }
+      }
+    >
+      made with love by @cpoliver
+    </Text>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "marginBottom": 12,
+        }
+      }
+    >
+      <SocialIcon
+        button={false}
+        iconColor="white"
+        iconSize={24}
+        light={true}
+        onPress={[Function]}
+        raised={true}
+        type="github"
+      />
+      <SocialIcon
+        button={false}
+        iconColor="white"
+        iconSize={24}
+        light={true}
+        onPress={[Function]}
+        raised={true}
+        type="linkedin"
+      />
+      <SocialIcon
+        button={false}
+        iconColor="white"
+        iconSize={24}
+        light={true}
+        onPress={[Function]}
+        raised={true}
+        type="twitter"
+      />
+    </View>
+  </View>
+</View>
+`;
