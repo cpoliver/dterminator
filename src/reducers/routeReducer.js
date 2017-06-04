@@ -5,7 +5,7 @@ const initState = {
   scene: {}
 };
 
-const routeReducer = (state = initState, action) => {
+const routeReducer = (state = initState, action = {}) => {
   const { type, scene } = action;
 
   const actions = {
