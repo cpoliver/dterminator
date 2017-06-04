@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the EditableListItem component should match the snapshot 1`] = `
+<View
+  style={
+    Object {
+      "borderBottomWidth": 1,
+      "borderColor": "#ccd2d8",
+      "flexDirection": "row",
+      "padding": 10,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "marginTop": 10,
+      }
+    }
+  >
+    <Input
+      onChangeValue={[Function]}
+      value="some text"
+    />
+  </View>
+  <View>
+    <Icon
+      color="#201b21"
+      name="trash-o"
+      onPress={[Function]}
+      raised={false}
+      reverse={true}
+      reverseColor="white"
+      size={18}
+      type="font-awesome"
+      underlayColor="white"
+    />
+  </View>
+</View>
+`;
