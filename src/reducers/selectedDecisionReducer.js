@@ -1,6 +1,5 @@
 import { append, assocPath, complement, evolve, filter, isNil } from 'ramda';
 
-import decisions from '../data/decisions.json';
 import {
   ADD_OPTION,
   REMOVE_OPTION,
@@ -9,11 +8,13 @@ import {
   UPDATE_DECISION
 } from '../actions/deciderActions';
 
-const initState = decisions[3];
+const initState = {};
 
 const removeNullOptions = state => evolve({ options: filter(complement(isNil)) }, state);
 
-const selectedDecisionReducer = (state = initState, { type, payload = {} }) => {
+const selectedDecisionReducer = (state = initState, action = {}) => {
+  const { type, payload = {} } = action;
+
   const actions = {
     [ADD_OPTION]: evolve({ options: append('') }, state),
     [REMOVE_OPTION]: assocPath(['options', payload.index], null, state),
