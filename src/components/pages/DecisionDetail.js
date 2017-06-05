@@ -5,8 +5,8 @@ import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
 import { addOption, removeOption, updateOption, updateDecision } from '../../actions/deciderActions';
-import pageStyles from './pageStyles';
-import { EditableListItem, Header, Input } from '../common';
+import screenStyles from '../../styles/screenStyles';
+import { EditableListItem, Input } from '../common';
 
 const createListItem = (index, value, removeOption, updateOption) => (
   <ListItem key={index} component={
@@ -20,9 +20,8 @@ const createListItem = (index, value, removeOption, updateOption) => (
   } />
 );
 
-const DecisionDetailComponent = ({ name, options, addOption, removeOption, updateOption, updateDecision }) => (
-  <View style={pageStyles.view}>
-    <Header />
+const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, updateOption, updateDecision }) => (
+  <View style={screenStyles.view}>
     <ScrollView>
       <FormLabel>Name</FormLabel>
       <Input value={name} onChangeValue={updateDecision} />

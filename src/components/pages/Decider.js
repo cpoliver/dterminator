@@ -4,12 +4,12 @@ import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import pageStyles from './pageStyles';
+import screenStyles from '../../styles/screenStyles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 
 const DeciderComponent = ({ decisions, selectDecision, navigation }) => (
-  <View style={pageStyles.view}>
+  <View style={screenStyles.view}>
     <Header>Decider</Header>
     <List style={{ flex: 1 }}>
     {

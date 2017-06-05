@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import pageStyles from './pageStyles';
+import screenStyles from '../../styles/screenStyles';
 import { Header, Placeholder } from '../common';
 
 const Settings = () => (
-  <View style={pageStyles.view}>
+  <View style={screenStyles.view}>
     <Header>Settings</Header>
     <Placeholder iconName="settings" />
   </View>

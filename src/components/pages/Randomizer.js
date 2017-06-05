@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import pageStyles from './pageStyles';
+import screenStyles from '../../styles/screenStyles';
 import { Header, Placeholder } from '../common';
 
 const Randomizer = () => (
-  <View style={pageStyles.view}>
+  <View style={screenStyles.view}>
     <Header>Randomizer</Header>
     <Placeholder iconName="dice-5" />
   </View>
