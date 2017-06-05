@@ -4,8 +4,8 @@ import { Icon } from 'react-native-elements';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Input } from './Input';
-import { EditableListItem } from './EditableListItem';
+import { Input } from '../Input';
+import { EditableListItem } from '../EditableListItem';
 
 const onChangeValueStub = jest.fn();
 const onDeleteButtonPressStub = jest.fn();

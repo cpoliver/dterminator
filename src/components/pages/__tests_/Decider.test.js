@@ -5,8 +5,8 @@ import { Actions } from 'react-native-router-flux';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import decisions from '../../data/decisions.json';
-import { DeciderComponent as Decider } from './Decider';
+import decisions from '../../../data/decisions.json';
+import { DeciderComponent as Decider } from '../Decider';
 
 const selectDecisionStub = jest.fn();
 

@@ -1,7 +1,7 @@
-import decisions from '../data/decisions.json';
+import decisions from '../../data/decisions.json';
 
-import { UPDATE_DECISION } from '../actions/deciderActions';
-import reducer from './savedDecisionsReducer';
+import { UPDATE_DECISION } from '../../actions/deciderActions';
+import reducer from '../savedDecisionsReducer';
 
 describe('the saved decisions reducer', () => {
   it('should return the correct initial state', () => {

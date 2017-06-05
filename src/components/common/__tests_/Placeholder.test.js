@@ -3,11 +3,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Main from './Main';
+import { Placeholder } from '../Placeholder';
 
-const render = () => shallow(<Main />);
+const render = () => shallow(
+  <Placeholder iconName="account" />
+);
 
-describe('the Main component', () => {
+describe('the Placeholder component', () => {
   it('should match the snapshot', () => {
     const component = render();
 

@@ -3,13 +3,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Randomizer } from './Randomizer';
+import { Header } from '../Header';
 
 const render = () => shallow(
-  <Randomizer />
+  <Header iconName="account">
+    Header Text
+  </Header>
 );
 
-describe('the Randomizer component', () => {
+describe('the Header component', () => {
   it('should match the snapshot', () => {
     const component = render();
 

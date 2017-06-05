@@ -1,6 +1,6 @@
 import { ActionConst } from 'react-native-router-flux';
 
-import reducer from './routeReducer';
+import reducer from '../routeReducer';
 
 const mockState = {
   scene: {}

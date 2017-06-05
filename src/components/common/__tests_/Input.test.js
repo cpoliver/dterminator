@@ -4,7 +4,7 @@ import { FormInput } from 'react-native-elements';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Input } from './Input';
+import { Input } from '../Input';
 
 const onChangeValueStub = jest.fn();
 const render = () => shallow(

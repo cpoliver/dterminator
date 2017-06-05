@@ -4,7 +4,7 @@ import { SocialIcon } from 'react-native-elements';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Home, openSocialUrl } from './Home';
+import { Home, openSocialUrl } from '../Home';
 
 const render = () => shallow(
   <Home />

@@ -1,6 +1,6 @@
-import { scenes } from './Routing';
-import Main from './components/Main';
-import { DecisionDetail } from './components/pages/DecisionDetail';
+import { scenes } from '../Routing';
+import Main from '../components/Main';
+import { DecisionDetail } from '../components/pages/DecisionDetail';
 
 describe('the Routing config', () => {
   it('should contain the root scene', () => {

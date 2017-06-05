@@ -6,9 +6,9 @@ import {
   SELECT_DECISION,
   UPDATE_OPTION,
   UPDATE_DECISION_NAME
-} from '../actions/deciderActions';
+} from '../../actions/deciderActions';
 
-import reducer from './selectedDecisionReducer';
+import reducer from '../selectedDecisionReducer';
 
 const mockState = {
   name: 'decision name',

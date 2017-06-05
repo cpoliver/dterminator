@@ -3,15 +3,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Header } from './Header';
+import Main from '../Main';
 
-const render = () => shallow(
-  <Header iconName="account">
-    Header Text
-  </Header>
-);
+const render = () => shallow(<Main />);
 
-describe('the Header component', () => {
+describe('the Main component', () => {
   it('should match the snapshot', () => {
     const component = render();
 
