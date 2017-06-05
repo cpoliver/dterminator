@@ -8,9 +8,13 @@ import decisions from '../../../data/decisions.json';
 import { DeciderComponent as Decider } from '../Decider';
 
 const selectDecisionStub = jest.fn();
+const navigationStub = { navigate: jest.fn() };
 
 const render = () => shallow(
-  <Decider decisions={decisions} selectDecision={selectDecisionStub} />
+  <Decider
+    decisions={decisions}
+    selectDecision={selectDecisionStub}
+    navigation={navigationStub} />
 );
 
 describe('the Decider component', () => {
@@ -27,7 +31,7 @@ describe('the Decider component', () => {
       listItem.simulate('press');
 
       expect(selectDecisionStub).toHaveBeenCalledTimes(1);
-      // expect(Actions.decisionDetail).toHaveBeenCalledTimes(1);
+      expect(navigationStub.navigate).toHaveBeenCalledTimes(1);
     });
   });
 });

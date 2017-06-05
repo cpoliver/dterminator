@@ -46,7 +46,8 @@
 		],
 		"coveragePathIgnorePatterns": [
 			"index.js",
-			"Styles.js"
+			"Styles.js",
+			"App.js"
 		]
 	},
 	"lint-staged": {

@@ -5,9 +5,7 @@ import toJson from 'enzyme-to-json';
 
 import { Profile } from '../Profile';
 
-const render = () => shallow(
-  <Profile />
-);
+const render = () => shallow(<Profile />);
 
 describe('the Profile component', () => {
   it('should match the snapshot', () => {
