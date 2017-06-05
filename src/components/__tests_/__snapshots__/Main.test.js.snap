@@ -44,6 +44,6 @@ exports[`the Main component should match the snapshot 1`] = `
     <Home />
     <Settings />
   </_class>
-  <Connect(DeciderComponent) />
+  <Connect(DecisionListComponent) />
 </_class>
 `;

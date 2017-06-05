@@ -1,4 +1,4 @@
-export * from './Decider';
+export * from './DecisionList';
 export * from './DecisionDetail';
 export * from './Home';
 export * from './Profile';

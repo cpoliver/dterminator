@@ -8,9 +8,9 @@ import { screenStyles } from '../../styles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 
-const DeciderComponent = ({ decisions, selectDecision, navigation }) => (
+const DecisionListComponent = ({ decisions, selectDecision, navigation }) => (
   <View style={screenStyles.view}>
-    <Header>Decider</Header>
+    <Header>Decision List</Header>
     <List style={{ flex: 1 }}>
     {
       decisions.map((item, index) => (
@@ -24,7 +24,7 @@ const DeciderComponent = ({ decisions, selectDecision, navigation }) => (
   </View>
 );
 
-DeciderComponent.propTypes = {
+DecisionListComponent.propTypes = {
   decisions: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
@@ -41,6 +41,6 @@ const mapDispatchToProps = dispatch => ({
   selectDecision: decision => dispatch(selectDecision(decision))
 });
 
-const Decider = connect(mapStateToProps, mapDispatchToProps)(DeciderComponent);
+const DecisionList = connect(mapStateToProps, mapDispatchToProps)(DecisionListComponent);
 
-export { Decider, DeciderComponent };
+export { DecisionList, DecisionListComponent };

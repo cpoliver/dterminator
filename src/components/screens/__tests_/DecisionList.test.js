@@ -5,19 +5,19 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import decisions from '../../../data/decisions.json';
-import { DeciderComponent as Decider } from '../Decider';
+import { DecisionListComponent as DecisionList } from '../DecisionList';
 
 const selectDecisionStub = jest.fn();
 const navigationStub = { navigate: jest.fn() };
 
 const render = () => shallow(
-  <Decider
+  <DecisionList
     decisions={decisions}
     selectDecision={selectDecisionStub}
     navigation={navigationStub} />
 );
 
-describe('the Decider component', () => {
+describe('the DecisionList component', () => {
   it('should match the snapshot', () => {
     const component = render();
 
