@@ -4,7 +4,7 @@ import { ScrollView, StyleSheet, View } from 'react-native';
 import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import { addOption, removeOption, updateOption, updateDecision } from '../../actions/deciderActions';
+import { addOption, removeOption, updateOption, updateDecisionName } from '../../actions/deciderActions';
 import { colors, screenStyles } from '../../styles';
 import { EditableListItem, Input } from '../common';
 
@@ -20,11 +20,11 @@ const createListItem = (index, value, removeOption, updateOption) => (
   } />
 );
 
-const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, updateOption, updateDecision }) => (
+const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, updateOption, updateDecisionName }) => (
   <View style={screenStyles.view}>
     <ScrollView>
       <FormLabel>Name</FormLabel>
-      <Input value={name} onChangeValue={updateDecision} />
+      <Input value={name} onChangeValue={updateDecisionName} />
       <List containerStyle={{ borderWidth: 0 }}>
       {
         options.map((value, index) => createListItem(index, value, removeOption, updateOption))
@@ -51,7 +51,7 @@ DecisionDetailComponent.propTypes = {
   addOption: PropTypes.func.isRequired,
   removeOption: PropTypes.func.isRequired,
   updateOption: PropTypes.func.isRequired,
-  updateDecision: PropTypes.func.isRequired
+  updateDecisionName: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ selectedDecision }) => ({
@@ -63,7 +63,7 @@ const mapDispatchToProps = dispatch => ({
   addOption: () => dispatch(addOption()),
   updateOption: index => value => dispatch(updateOption({ index, value })),
   removeOption: index => () => dispatch(removeOption(index)),
-  updateDecision: decision => dispatch(updateDecision(decision))
+  updateDecisionName: decision => dispatch(updateDecisionName(decision))
 });
 
 const DecisionDetail = connect(mapStateToProps, mapDispatchToProps)(DecisionDetailComponent);

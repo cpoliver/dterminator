@@ -17,7 +17,6 @@ exports[`the DecisionDetail component should match the snapshot 1`] = `
       Name
     </FormLabel>
     <Input
-      onChangeValue={[Function]}
       value="What to have for dinner"
     />
     <List

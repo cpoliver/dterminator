@@ -31,14 +31,14 @@
 }, {
   "id": "003",
   "name": "What music to listen to",
-	"options": [
-	  "drum 'n' bass",
-		"hip hop",
-		"jazz",
-		"rock",
-		"metal",
-		"big beat",
-		"house",
-		"ambient"
-	]
+  "options": [
+    "drum 'n' bass",
+    "hip hop",
+    "jazz",
+    "rock",
+    "metal",
+    "big beat",
+    "house",
+    "ambient"
+  ]
 }]
