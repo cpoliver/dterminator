@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Text, View } from 'react-native';
 
+import { colors } from '../../styles';
+
 const Header = ({ children }) => (
   <View style={styles.container}>
     <Text style={styles.text}>{children}</Text>
@@ -12,7 +14,7 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     alignSelf: 'stretch',
-    backgroundColor: '#201b21',
+    backgroundColor: colors.background,
     elevation: 2,
     height: 64,
     justifyContent: 'center',
@@ -20,7 +22,7 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   text: {
-    color: '#25c7ee',
+    color: colors.main,
     fontSize: 20,
     fontWeight: 'bold'
   }

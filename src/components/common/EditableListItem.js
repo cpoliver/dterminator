@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
 
 import { Input } from './Input';
+import { colors } from '../../styles';
 
 const EditableListItem = ({ value, onChangeValue, onDeleteButtonPress }) => (
   <View style={styles.container}>
@@ -19,7 +20,7 @@ const EditableListItem = ({ value, onChangeValue, onDeleteButtonPress }) => (
         name="trash-o"
         type="font-awesome"
         size={18}
-        color="#201b21"
+        color={colors.background}
         reverse
       />
     </View>
@@ -29,7 +30,7 @@ const EditableListItem = ({ value, onChangeValue, onDeleteButtonPress }) => (
 const styles = StyleSheet.create({
   container: {
     borderBottomWidth: 1,
-    borderColor: '#ccd2d8',
+    borderColor: colors.border,
     flexDirection: 'row',
     padding: 10
   },

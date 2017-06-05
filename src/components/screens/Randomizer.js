@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 
-import screenStyles from '../../styles/screenStyles';
+import { screenStyles } from '../../styles';
 import { Header, Placeholder } from '../common';
 
 const Randomizer = () => (

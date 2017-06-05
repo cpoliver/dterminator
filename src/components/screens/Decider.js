@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
-import screenStyles from '../../styles/screenStyles';
+import { screenStyles } from '../../styles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 

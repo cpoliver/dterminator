@@ -5,7 +5,7 @@ import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 
 import { addOption, removeOption, updateOption, updateDecision } from '../../actions/deciderActions';
-import screenStyles from '../../styles/screenStyles';
+import { colors, screenStyles } from '../../styles';
 import { EditableListItem, Input } from '../common';
 
 const createListItem = (index, value, removeOption, updateOption) => (
@@ -40,7 +40,7 @@ const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, 
 const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: 'flex-end',
-    backgroundColor: '#f6f7fb',
+    backgroundColor: colors.lightest,
     padding: 4
   }
 });

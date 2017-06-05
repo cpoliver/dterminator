@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
-export default StyleSheet.create({
+import { colors } from './colors'
+
+export const screenStyles = StyleSheet.create({
   view: {
     alignItems: 'stretch',
-    backgroundColor: '#f6f7fb',
+    backgroundColor: colors.lightest,
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start'

@@ -2,6 +2,8 @@ import React from 'react';
 import { Linking, StyleSheet, Text, View } from 'react-native';
 import { SocialIcon } from 'react-native-elements';
 
+import { colors } from '../../styles';
+
 const socialPlatforms = {
   github: 'https://github.com/cpoliver',
   linkedin: 'https://linkedin.com/in/cpoliver',
@@ -37,7 +39,7 @@ const Home = () => (
 
 const styles = StyleSheet.create({
   footerText: {
-    color: '#d5d4cf',
+    color: colors.light,
     fontSize: 18,
     marginBottom: 6
   },
@@ -48,16 +50,16 @@ const styles = StyleSheet.create({
   },
   pageContainer: {
     alignItems: 'center',
-    backgroundColor: '#201b21',
+    backgroundColor: colors.background,
     flex: 1,
     justifyContent: 'center'
   },
   subtitle: {
-    color: '#f6f7fb',
+    color: colors.lightest,
     fontSize: 16
   },
   title: {
-    color: '#25c7ee',
+    color: colors.main,
     fontSize: 42,
     fontWeight: 'bold'
   },
