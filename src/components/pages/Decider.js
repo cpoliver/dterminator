@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { List, ListItem } from 'react-native-elements';
-import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
 import pageStyles from './pageStyles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 
-const DeciderComponent = ({ decisions, selectDecision }) => (
+const DeciderComponent = ({ decisions, selectDecision, navigation }) => (
   <View style={pageStyles.view}>
     <Header>Decider</Header>
     <List style={{ flex: 1 }}>
@@ -17,7 +16,7 @@ const DeciderComponent = ({ decisions, selectDecision }) => (
       decisions.map((item, index) => (
         <ListItem key={index} title={item.name} onPress={() => {
           selectDecision(item);
-          Actions.decisionDetail();
+          navigation.navigate('decisionDetail');
         }} />
       ))
     }
@@ -32,7 +31,8 @@ DeciderComponent.propTypes = {
       options: PropTypes.arrayOf(PropTypes.string)
     })
   ),
-  selectDecision: PropTypes.func.isRequired
+  selectDecision: PropTypes.func.isRequired,
+  navigation: PropTypes.object.isRequired
 };
 
 const mapStateToProps = ({ decisions }) => ({ decisions });

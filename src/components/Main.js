@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Swiper from 'react-native-swiper';
 
 import {
     Decider, Home, Profile, Randomizer, Settings
 } from './pages';
 
-const Main = () => (
+const Main = ({ navigation }) => (
   <Swiper loop={false} showsPagination={false} index={1}>
     <Randomizer />
     <Swiper loop={false} showsPagination={false} index={1} horizontal={false}>
@@ -13,8 +14,12 @@ const Main = () => (
       <Home />
       <Settings />
     </Swiper>
-    <Decider />
+    <Decider navigation={navigation} />
   </Swiper>
 );
 
-export default Main;
+Main.propTypes = {
+  navigation: PropTypes.object.isRequired
+};
+
+export { Main };
