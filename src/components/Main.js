@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Swiper from 'react-native-swiper';
 
-import {
-    Decider, Home, Profile, Randomizer, Settings
-} from './pages';
+import { Decider, Home, Profile, Randomizer, Settings } from './screens';
 
 const Main = ({ navigation }) => (
   <Swiper loop={false} showsPagination={false} index={1}>
