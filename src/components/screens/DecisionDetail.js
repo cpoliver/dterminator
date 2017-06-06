@@ -3,28 +3,32 @@ import PropTypes from 'prop-types';
 import { ScrollView, StyleSheet, View } from 'react-native';
 import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
 
-import { addOption, removeOption, updateOption, updateDecisionName } from '../../actions/deciderActions';
+import { addOption, removeOption, updateOption } from '../../actions/deciderActions';
 import { colors, screenStyles } from '../../styles';
 import { EditableListItem, Input } from '../common';
 
-const createListItem = (index, value, removeOption, updateOption) => (
+const createListItem = (index, value, removeOption) => (
   <ListItem key={index} component={
     () => (
       <EditableListItem
         value={value}
         onDeleteButtonPress={removeOption(index)}
-        onChangeValue={updateOption(index)}
       />
     )
   } />
 );
 
-const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, updateOption, updateDecisionName }) => (
+const submit = values => {
+  console.log('submitting form', values);
+};
+
+const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, handleSubmit }) => (
   <View style={screenStyles.view}>
     <ScrollView>
       <FormLabel>Name</FormLabel>
-      <Input value={name} onChangeValue={updateDecisionName} />
+      <Field name="decisionName" component={({ input: { onChange } }) => <Input value={name} onChangeValue={onChange} />} />
       <List containerStyle={{ borderWidth: 0 }}>
       {
         options.map((value, index) => createListItem(index, value, removeOption, updateOption))
@@ -32,6 +36,7 @@ const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, 
       </List>
     </ScrollView>
     <View style={styles.buttonContainer}>
+      <Icon name="save" reverse onPress={handleSubmit(submit)} />
       <Icon name="add" reverse onPress={() => addOption()} />
     </View>
   </View>
@@ -50,8 +55,7 @@ DecisionDetailComponent.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   addOption: PropTypes.func.isRequired,
   removeOption: PropTypes.func.isRequired,
-  updateOption: PropTypes.func.isRequired,
-  updateDecisionName: PropTypes.func.isRequired
+  handleSubmit: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ selectedDecision }) => ({
@@ -61,11 +65,11 @@ const mapStateToProps = ({ selectedDecision }) => ({
 
 const mapDispatchToProps = dispatch => ({
   addOption: () => dispatch(addOption()),
-  updateOption: index => value => dispatch(updateOption({ index, value })),
-  removeOption: index => () => dispatch(removeOption(index)),
-  updateDecisionName: decision => dispatch(updateDecisionName(decision))
+  removeOption: index => () => dispatch(removeOption(index))
 });
 
-const DecisionDetail = connect(mapStateToProps, mapDispatchToProps)(DecisionDetailComponent);
+const DecisionDetail = reduxForm({ form: 'decisionDetail' })(
+  connect(mapStateToProps, mapDispatchToProps)(DecisionDetailComponent)
+);
 
 export { DecisionDetail, DecisionDetailComponent };
