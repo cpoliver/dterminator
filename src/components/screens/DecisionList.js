@@ -8,18 +8,18 @@ import { screenStyles } from '../../styles';
 import { selectDecision } from '../../actions/deciderActions';
 import { Header } from '../common';
 
+const createListItem = (decision, index, navigation) => (
+  <ListItem
+    key={index}
+    title={decision.name}
+    onPress={() => navigation.navigate('decisionDetail', decision)} />
+);
+
 const DecisionListComponent = ({ decisions, selectDecision, navigation }) => (
   <View style={screenStyles.view}>
     <Header>Decision List</Header>
     <List style={{ flex: 1 }}>
-    {
-      decisions.map((item, index) => (
-        <ListItem key={index} title={item.name} onPress={() => {
-          selectDecision(item);
-          navigation.navigate('decisionDetail');
-        }} />
-      ))
-    }
+      {decisions.map((decision, index) => createListItem(decision, index, navigation))}
     </List>
   </View>
 );
@@ -37,10 +37,6 @@ DecisionListComponent.propTypes = {
 
 const mapStateToProps = ({ decisions }) => ({ decisions });
 
-const mapDispatchToProps = dispatch => ({
-  selectDecision: decision => dispatch(selectDecision(decision))
-});
-
-const DecisionList = connect(mapStateToProps, mapDispatchToProps)(DecisionListComponent);
+const DecisionList = connect(mapStateToProps)(DecisionListComponent);
 
 export { DecisionList, DecisionListComponent };

@@ -5,7 +5,7 @@ import { FormLabel, Icon, List, ListItem } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 
-import { addOption, removeOption, updateOption } from '../../actions/deciderActions';
+import { addOption, removeOption } from '../../actions/deciderActions';
 import { colors, screenStyles } from '../../styles';
 import { EditableListItem, Input } from '../common';
 
@@ -24,23 +24,27 @@ const submit = values => {
   console.log('submitting form', values);
 };
 
-const DecisionDetailComponent = ({ name, options = [], addOption, removeOption, handleSubmit }) => (
-  <View style={screenStyles.view}>
-    <ScrollView>
-      <FormLabel>Name</FormLabel>
-      <Field name="decisionName" component={({ input: { onChange } }) => <Input value={name} onChangeValue={onChange} />} />
-      <List containerStyle={{ borderWidth: 0 }}>
-      {
-        options.map((value, index) => createListItem(index, value, removeOption, updateOption))
-      }
-      </List>
-    </ScrollView>
-    <View style={styles.buttonContainer}>
-      <Icon name="save" reverse onPress={handleSubmit(submit)} />
-      <Icon name="add" reverse onPress={() => addOption()} />
+const DecisionDetailComponent = ({ navigation, addOption, removeOption, handleSubmit }) => {
+  const { name, options = [] } = navigation.state.params;
+
+  return (
+    <View style={screenStyles.view}>
+      <ScrollView>
+        <FormLabel>Name</FormLabel>
+        <Field name="decisionName" component={({ input: { onChange } }) => <Input value={name} onChangeValue={onChange} />} />
+        <List containerStyle={{ borderWidth: 0 }}>
+        {
+          options.map((value, index) => createListItem(index, value, removeOption))
+        }
+        </List>
+      </ScrollView>
+      <View style={styles.buttonContainer}>
+        <Icon name="save" reverse onPress={handleSubmit(submit)} />
+        <Icon name="add" reverse onPress={() => addOption()} />
+      </View>
     </View>
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -58,18 +62,13 @@ DecisionDetailComponent.propTypes = {
   handleSubmit: PropTypes.func.isRequired
 };
 
-const mapStateToProps = ({ selectedDecision }) => ({
-  name: selectedDecision.name,
-  options: selectedDecision.options
-});
-
 const mapDispatchToProps = dispatch => ({
   addOption: () => dispatch(addOption()),
-  removeOption: index => () => dispatch(removeOption(index))
+  removeOption: optionName => () => dispatch(removeOption(optionName))
 });
 
 const DecisionDetail = reduxForm({ form: 'decisionDetail' })(
-  connect(mapStateToProps, mapDispatchToProps)(DecisionDetailComponent)
+  connect(null, mapDispatchToProps)(DecisionDetailComponent)
 );
 
 export { DecisionDetail, DecisionDetailComponent };
